@@ -1,0 +1,17 @@
+version: '3.5'
+
+services:
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+      
+
+  db_service:
+    container_name: db_service
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_USER=admin
+    image: postgres:16.2
